@@ -18,7 +18,7 @@
 
     <button id="b3" onclick="addRow()">Add Row</button>
 
-    <div id="tableContainer">
+    <div style="margin-top: 20px;" id="tableContainer">
 
     </div>
 
@@ -47,6 +47,16 @@
 			document.getElementById("b1").style.display = "none";
 			document.getElementById("t1").style.display = "none";
 			document.getElementById("t2").style.display = "none";
+		}
+        function addColumn() {
+			var table = document.querySelector('table');
+			var rowCount = table.rows.length;
+			
+			for (var i = 0; i < rowCount; i++) {
+				var cell = table.rows[i].insertCell();
+				cell.style.border = "1px solid black";
+                cell.style.width = "80px";
+			}
 		}
 
     </script>
