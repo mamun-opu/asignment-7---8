@@ -24,27 +24,28 @@
 
     <script language="javascript">
       function generateTable() {
-        var rows = parseInt(document.getElementById("t1").value);
-        var cols = parseInt(document.getElementById("t2").value);
-
-        var table = document.createElement("table");
-
-        for (var i = 0; i < rows; i++) {
-          var row = table.insertRow();
-          for (var j = 0; j < cols; j++) {
-            var cell = row.insertCell();
-            cell.innerHTML = "Row " + (i + 1) + ", Column " + (j + 1);
-          }
-        }
-
-        var tableContainer = document.getElementById("tableContainer");
-        tableContainer.innerHTML = "";
-        tableContainer.appendChild(table);
-
-        document.getElementById("b1").style.display = "none";
-        document.getElementById("t1").style.display = "none";
-        document.getElementById("t2").style.display = "none";
-      }
+			var rows = parseInt(document.getElementById("t1").value);
+			var cols = parseInt(document.getElementById("t2").value);
+			
+			var table = document.createElement('table');
+			table.style.border = "1px solid black";
+			
+			for (var i = 0; i < rows; i++) {
+				var row = table.insertRow();
+				for (var j = 0; j < cols; j++) {
+					var cell = row.insertCell();
+					cell.style.border = "1px solid black";
+				}
+			}
+			
+			var tableContainer = document.getElementById("tableContainer");
+			tableContainer.innerHTML = '';
+			tableContainer.appendChild(table);
+			
+			document.getElementById("b1").style.display = "none";
+			document.getElementById("t1").style.display = "none";
+			document.getElementById("t2").style.display = "none";
+		}
 
     </script>
   </body>
