@@ -23,6 +23,8 @@
     </div>
 
     <script language="javascript">
+
+        // function to generate table
       function generateTable() {
 			var rows = parseInt(document.getElementById("t1").value);
 			var cols = parseInt(document.getElementById("t2").value);
@@ -31,10 +33,10 @@
 			table.style.border = "1px solid black";
 			
 			for (var i = 0; i < rows; i++) {
-				var row = table.insertRow();
+				var row = table.insertRow(); //creating rows
                 row.style.height = "30px";
 				for (var j = 0; j < cols; j++) {
-					var cell = row.insertCell();
+					var cell = row.insertCell(); //creating colums
 					cell.style.border = "1px solid black";
                     cell.style.width = "80px";
 				}
@@ -44,18 +46,33 @@
 			tableContainer.innerHTML = '';
 			tableContainer.appendChild(table);
 			
+            // hiding number of rows, number of colums input field and generate table button
 			document.getElementById("b1").style.display = "none";
 			document.getElementById("t1").style.display = "none";
 			document.getElementById("t2").style.display = "none";
 		}
+        // function to add addColumn
         function addColumn() {
 			var table = document.querySelector('table');
 			var rowCount = table.rows.length;
 			
 			for (var i = 0; i < rowCount; i++) {
-				var cell = table.rows[i].insertCell();
+				var cell = table.rows[i].insertCell(); //generating column
+                //adding styles
 				cell.style.border = "1px solid black";
                 cell.style.width = "80px";
+			}
+		}
+        //function to add row
+        function addRow() {
+			var table = document.querySelector('table');
+			var newRow = table.insertRow();
+			newRow.style.height = "30px"; 
+			var cellCount = table.rows[0].cells.length;
+			
+			for (var i = 0; i < cellCount; i++) {
+				var cell = newRow.insertCell(); //generating row
+				cell.style.border = "1px solid black";
 			}
 		}
 
